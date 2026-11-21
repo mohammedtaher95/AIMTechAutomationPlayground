@@ -74,20 +74,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
-                    <includes>
-                        <include>**/${package}/**/*Test.java</include>
-                    </includes>
-<!--                    <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>-->
-<!--                    <failIfNoTests>false</failIfNoTests>-->
-<!--                    <trimStackTrace>false</trimStackTrace>-->
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results
                         </allure.results.directory>
