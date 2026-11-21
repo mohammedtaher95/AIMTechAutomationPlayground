@@ -13,17 +13,10 @@ public class TestNGHelper {
 
         test = suite.getTests().get(0);
         suite.setName("AIMTech Framework Test Suite");
-//        suite.setParallel(XmlSuite.ParallelMode.CLASSES);
-//        suite.setThreadCount(2);
-//
+
         if (frameworkConfig.getProperty("parallelExecution").equalsIgnoreCase("Normal")) {
             initializeNormalExecution(suite);
         }
-
-//        if (frameworkConfig.getProperty("parallelExecution").equalsIgnoreCase("Parallel")) {
-//            suite.setParallel(XmlSuite.ParallelMode.CLASSES);
-//            suite.setThreadCount(2);
-//        }
 
         else  {
             initializeCrossBrowserExecution(suite);
