@@ -14,7 +14,7 @@ node {
             if (isUnix()) {
                 sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean'
             } else {
-                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean test/)
+                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean/)
             }
         }
     }
@@ -22,9 +22,9 @@ node {
         // Run the maven build
         withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
-                sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean test -Dtest="automationExerciseTests.UserRegistration"'
+                sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean test -Dtest="${params.TESTS}"'
             } else {
-                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean test -Dtest="automationExerciseTests.UserRegistration"/)
+                bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean test -Dtest="${params.TESTS}"/)
             }
         }
     }
